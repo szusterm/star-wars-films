@@ -1,39 +1,32 @@
 import AppContainer from './components/AppContainer';
 import CollapsedBox from './components/CollapsedBox';
-import {useQuery, gql} from '@apollo/client';
+import {useQuery} from '@apollo/client';
+import {GET_FILMS_LIST} from './api';
 import {Root} from './types';
 import React from 'react';
 
-const GET_FILMS_LIST = gql`
-  query {
-    allFilms {
-      films {
-        title
-      }
-    }
-  }
-`;
-
 const App = () => {
-  const {data, error, loading} = useQuery<Root>(GET_FILMS_LIST);
+  const {
+    data: responseData,
+    error: isLoadingError,
+    loading: areFilmsLoading
+  } = useQuery<Root>(GET_FILMS_LIST);
 
-  if (error) {
-    return <div>Error: {JSON.stringify(error)}</div>;
-  }
+  const {films} = responseData?.allFilms || {};
 
-  if (loading) {
-    return <div>loading</div>;
-  }
+  const renderedFilms = films?.filter(Boolean).map(film => (
+    <CollapsedBox key={film?.title} title={film?.title}>
+      ss
+    </CollapsedBox>
+  ));
 
-  return (
-    <AppContainer>
-      {data?.allFilms?.films?.map(film => (
-        <CollapsedBox key={film?.title} title={film?.title}>
-          ss
-        </CollapsedBox>
-      ))}
-    </AppContainer>
-  );
+  const renderedContent = [
+    areFilmsLoading && <div>Loading</div>,
+    isLoadingError && <div>Error</div>,
+    renderedFilms
+  ].filter(Boolean);
+
+  return <AppContainer>{renderedContent}</AppContainer>;
 };
 
 export default App;
