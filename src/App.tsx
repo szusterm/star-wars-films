@@ -1,7 +1,28 @@
+import {useQuery, gql} from '@apollo/client';
 import React from 'react';
 
+const GET_FILMS_LIST = gql`
+  query {
+    allFilms {
+      films {
+        title
+      }
+    }
+  }
+`;
+
 const App = () => {
-  return <div>Test</div>;
+  const {data, error, loading} = useQuery(GET_FILMS_LIST);
+
+  if (error) {
+    return <div>Error: {JSON.stringify(error)}</div>;
+  }
+
+  if (loading) {
+    return <div>loading</div>;
+  }
+
+  return <div>{JSON.stringify(data)}</div>;
 };
 
 export default App;

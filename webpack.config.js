@@ -20,9 +20,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
+  devtool: 'source-map',
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve( __dirname, 'src/index.html' ),
+      template: path.resolve(__dirname, 'src/index.html'),
       filename: 'index.html'
     })
   ],

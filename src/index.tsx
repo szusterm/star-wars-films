@@ -1,5 +1,20 @@
+import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
+import {SWAPI_URL} from './constants';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const client = new ApolloClient({
+  uri: SWAPI_URL,
+  cache: new InMemoryCache()
+});
+
+const app = (
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>
+);
+
+const rootElement = document.getElementById('root');
+
+ReactDOM.render(app, rootElement);
