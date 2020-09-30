@@ -34,3 +34,17 @@ export const LogoImage = styled.img`
     height: 64px;
   }
 `;
+
+export const CopyrightInfo = styled.footer`
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 14px;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 8px;
+  color: #999999;
+
+  @media (min-width: ${DESKTOP_SIZE}) {
+    padding-top: 20px;
+  }
+`;
