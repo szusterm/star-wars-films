@@ -11,6 +11,7 @@ type BoxOpeningButtonProps = {
 const SHADOW_WITH_CLOSED = '0 2px 1px rgba(196, 196, 196, 0.2)';
 const SHADOW_WITH_OPENED = '0 4px 12px rgba(224, 230, 238, 0.5);';
 export const BoxOpeningButton = styled.button<BoxOpeningButtonProps>`
+  outline: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,6 +41,8 @@ export const Title = styled.span`
 `;
 
 export const HiddenContainer = styled.div`
+  display: flex;
+  justify-content: center;
   background: white;
   box-shadow: 0 2px 1px rgba(196, 196, 196, 0.2);
   margin-top: -8px;

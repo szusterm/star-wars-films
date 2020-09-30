@@ -1,11 +1,14 @@
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
+import {loadCustomFilms} from './utils/customFilms';
 import 'semantic-ui-css/semantic.min.css';
 import {SWAPI_URL} from './constants';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import App from './App';
 
-const client = new ApolloClient({
+loadCustomFilms();
+
+export const client = new ApolloClient({
   uri: SWAPI_URL,
   cache: new InMemoryCache()
 });

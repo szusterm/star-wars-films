@@ -14,7 +14,6 @@ export const GET_FILMS_LIST = gql`
 export type PlanetsFromFilmData = {
   filmId: string;
 };
-
 export const GET_PLANETS_FROM_FILM = gql`
   query GetPlanetsFromFilm($filmId: ID!) {
     film(id: $filmId) {
@@ -38,7 +37,14 @@ export const GET_PLANETS_LIST = gql`
   query GetPlanetsList {
     allPlanets {
       planets {
+        id
         name
+        rotationPeriod
+        orbitalPeriod
+        diameter
+        climates
+        surfaceWater
+        population
       }
     }
   }
