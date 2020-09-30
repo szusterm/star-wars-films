@@ -4,6 +4,7 @@ import {useQuery} from '@apollo/client';
 import {GET_FILMS_LIST} from './api';
 import {Root} from './types';
 import React from 'react';
+import DashedDivider from './components/DashedDivider';
 
 const App: React.FC = () => {
   const {
@@ -28,7 +29,12 @@ const App: React.FC = () => {
     renderedFilms
   ].filter(Boolean);
 
-  return <AppContainer>{renderedContent}</AppContainer>;
+  return (
+    <AppContainer>
+      {renderedContent}
+      <DashedDivider />
+    </AppContainer>
+  );
 };
 
 export default App;
