@@ -1,4 +1,5 @@
 import {GET_PLANETS_FROM_FILM, PlanetsFromFilmData} from '../../api';
+import PlanetsDetailsTable from '../PlanetsDetailsTable';
 import {useLazyQuery} from '@apollo/client';
 import CollapsedBox from '../CollapsedBox';
 import {Root} from '../../types';
@@ -19,15 +20,10 @@ const FilmStatistics: React.FC<FilmStatisticsProps> = ({filmId, filmTitle}) => {
 
   const {planets} = responseData?.film?.planetConnection || {};
 
-  const renderedFilms = planets?.map(planet => {
-    if (!planet) return;
-    return Object.entries(planet).map(([key, value]) => `${key}: ${value}`);
-  });
-
   const renderedContent = [
     arePlanetsLoading && <div>Loading</div>,
     (!planets || isLoadingError) && <div>Error</div>,
-    renderedFilms
+    planets && <PlanetsDetailsTable planets={planets} />
   ].find(Boolean);
 
   return (
