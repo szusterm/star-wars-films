@@ -5,11 +5,16 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --mode=development --open",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "generate-types": "graphql-codegen"
   },
   "author": "Marcin Szuster",
   "license": "ISC",
   "devDependencies": {
+    "@graphql-codegen/cli": "1.17.10",
+    "@graphql-codegen/typescript": "1.17.10",
+    "@graphql-codegen/typescript-operations": "1.17.8",
+    "@graphql-codegen/typescript-react-apollo": "2.0.7",
     "@types/node": "14.11.2",
     "@types/react": "16.9.49",
     "@types/react-dom": "16.9.8",

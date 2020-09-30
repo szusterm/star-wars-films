@@ -1,4 +1,5 @@
 import {useQuery, gql} from '@apollo/client';
+import {Root} from './types';
 import React from 'react';
 
 const GET_FILMS_LIST = gql`
@@ -12,7 +13,7 @@ const GET_FILMS_LIST = gql`
 `;
 
 const App = () => {
-  const {data, error, loading} = useQuery(GET_FILMS_LIST);
+  const {data, error, loading} = useQuery<Root>(GET_FILMS_LIST);
 
   if (error) {
     return <div>Error: {JSON.stringify(error)}</div>;
