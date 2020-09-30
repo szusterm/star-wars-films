@@ -1,3 +1,4 @@
+import AppContainer from './components/AppContainer';
 import {useQuery, gql} from '@apollo/client';
 import {Root} from './types';
 import React from 'react';
@@ -23,7 +24,7 @@ const App = () => {
     return <div>loading</div>;
   }
 
-  return <div>{JSON.stringify(data)}</div>;
+  return <AppContainer></AppContainer>;
 };
 
 export default App;
