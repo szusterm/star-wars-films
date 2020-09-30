@@ -1,4 +1,5 @@
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
+import 'semantic-ui-css/semantic.min.css';
 import {SWAPI_URL} from './constants';
 import ReactDOM from 'react-dom';
 import React from 'react';
