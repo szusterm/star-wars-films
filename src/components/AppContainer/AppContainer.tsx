@@ -2,11 +2,7 @@ import {ContentContainer, LogoImage, RootContainer} from './styled';
 import AppLogoSrc from '../../assets/logo.svg';
 import React from 'react';
 
-type AppContainerProps = {
-  children?: JSX.Element | JSX.Element[];
-};
-
-const AppContainer: React.FC<AppContainerProps> = ({children}) => {
+const AppContainer: React.FC = ({children}) => {
   return (
     <RootContainer>
       <ContentContainer>
