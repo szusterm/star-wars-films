@@ -8,8 +8,8 @@ export const Container = styled.div`
 type BoxOpeningButtonProps = {
   isOpened?: boolean;
 };
-const shadowWithClosed = '0 2px 1px rgba(196, 196, 196, 0.2)';
-const shadowWithOpened = '0 4px 12px rgba(224, 230, 238, 0.5);';
+const SHADOW_WITH_CLOSED = '0 2px 1px rgba(196, 196, 196, 0.2)';
+const SHADOW_WITH_OPENED = '0 4px 12px rgba(224, 230, 238, 0.5);';
 export const BoxOpeningButton = styled.button<BoxOpeningButtonProps>`
   display: flex;
   justify-content: space-between;
@@ -22,7 +22,7 @@ export const BoxOpeningButton = styled.button<BoxOpeningButtonProps>`
   padding: 14px 10px;
   cursor: pointer;
   box-shadow: ${({isOpened}) =>
-    isOpened ? shadowWithOpened : shadowWithClosed};
+    isOpened ? SHADOW_WITH_OPENED : SHADOW_WITH_CLOSED};
 
   &:active {
     border: 0;

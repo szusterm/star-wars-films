@@ -11,15 +11,26 @@ import {
 
 type CollapsedBoxProps = {
   title?: string | null;
+  onOpen?: () => void;
 };
 
-const CollapsedBox: React.FC<CollapsedBoxProps> = ({title, children}) => {
+const CollapsedBox: React.FC<CollapsedBoxProps> = ({
+  title,
+  onOpen,
+  children
+}) => {
   const [isBoxOpened, setIsBoxOpened] = useState(false);
   const toggleIsBoxOpened = () => setIsBoxOpened(wasBoxOpened => !wasBoxOpened);
 
   return (
     <Container>
-      <BoxOpeningButton onClick={toggleIsBoxOpened} isOpened={isBoxOpened}>
+      <BoxOpeningButton
+        onClick={() => {
+          toggleIsBoxOpened();
+          !isBoxOpened && onOpen && onOpen();
+        }}
+        isOpened={isBoxOpened}
+      >
         <Title>{title}</Title>
         <ArrowImg src={isBoxOpened ? ArrowCloseSrc : ArrowOpenSrc} alt="" />
       </BoxOpeningButton>

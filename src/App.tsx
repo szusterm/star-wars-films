@@ -1,11 +1,11 @@
+import FilmStatistics from './components/FilmStatistics';
 import AppContainer from './components/AppContainer';
-import CollapsedBox from './components/CollapsedBox';
 import {useQuery} from '@apollo/client';
 import {GET_FILMS_LIST} from './api';
 import {Root} from './types';
 import React from 'react';
 
-const App = () => {
+const App: React.FC = () => {
   const {
     data: responseData,
     error: isLoadingError,
@@ -14,15 +14,17 @@ const App = () => {
 
   const {films} = responseData?.allFilms || {};
 
-  const renderedFilms = films?.filter(Boolean).map(film => (
-    <CollapsedBox key={film?.title} title={film?.title}>
-      ss
-    </CollapsedBox>
-  ));
+  const renderedFilms = films?.map(film => {
+    if (!film || !film.title) return;
+
+    return (
+      <FilmStatistics key={film.id} filmId={film.id} filmTitle={film.title} />
+    );
+  });
 
   const renderedContent = [
     areFilmsLoading && <div>Loading</div>,
-    isLoadingError && <div>Error</div>,
+    (!films || isLoadingError) && <div>Error</div>,
     renderedFilms
   ].filter(Boolean);
 
