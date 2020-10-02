@@ -37,8 +37,9 @@ const App: React.FC = () => {
             />
           );
         })}
-        {customFilms.map(film => (
-          <CustomFilmStatistics key={film.id} film={film} />
+
+        {customFilms.map((film, index) => (
+          <CustomFilmStatistics key={`${index}${film?.title}`} film={film} />
         ))}
       </AppContainer.Section>
 
