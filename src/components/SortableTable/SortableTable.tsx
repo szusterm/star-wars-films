@@ -1,6 +1,6 @@
+import {Cell, TableHeader, Table} from './styled';
 import {sortFunBuilder} from '../../utils/array';
 import React, {useMemo, useState} from 'react';
-import {Cell, HeadRow, Table} from './styled';
 import HeaderButton from './HeaderButton';
 
 export type SuperTableProps = {
@@ -33,8 +33,8 @@ const SortableTable: React.FC<SuperTableProps> = ({
 
   return (
     <Table>
-      <thead>
-        <HeadRow>
+      <TableHeader>
+        <tr>
           {headers.map((header, index) => (
             <Cell key={header.label}>
               <HeaderButton
@@ -52,8 +52,8 @@ const SortableTable: React.FC<SuperTableProps> = ({
               />
             </Cell>
           ))}
-        </HeadRow>
-      </thead>
+        </tr>
+      </TableHeader>
       <tbody>
         {sortedItems.map(item => (
           <tr key={extractKey(item)}>

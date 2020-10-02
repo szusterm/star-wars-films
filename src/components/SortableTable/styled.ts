@@ -6,7 +6,7 @@ export const Table = styled.table`
   font-weight: 400;
 `;
 
-export const HeadRow = styled.tr`
+export const TableHeader = styled.thead`
   border-bottom: 1px solid black;
 `;
 

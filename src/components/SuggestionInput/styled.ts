@@ -13,6 +13,8 @@ export const SuggestionsContainer = styled.div`
   border: 1px solid #e5e5e5;
   box-shadow: 0 4px 4px rgba(196, 196, 196, 0.5);
   padding: 6px 0;
+  max-height: 200px;
+  overflow-y: auto;
 `;
 
 export type SuggestionItemProps = {
