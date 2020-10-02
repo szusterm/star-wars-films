@@ -6,6 +6,7 @@ import HeaderButton from './HeaderButton';
 export type SuperTableProps = {
   headers: ColumnHeader[];
   items: ItemData[];
+  extractKey: (item: ItemData) => string | number;
 };
 
 export type ColumnHeader = {
@@ -17,7 +18,11 @@ export type ItemData = {
   [key: string]: any;
 };
 
-const SortableTable: React.FC<SuperTableProps> = ({headers, items}) => {
+const SortableTable: React.FC<SuperTableProps> = ({
+  headers,
+  items,
+  extractKey
+}) => {
   const [fieldToSort, setFieldToSort] = useState(headers[0]?.fieldName);
   const [isAscending, setIsAscending] = useState(true);
 
@@ -50,8 +55,8 @@ const SortableTable: React.FC<SuperTableProps> = ({headers, items}) => {
         </HeadRow>
       </thead>
       <tbody>
-        {sortedItems.map((item, index) => (
-          <tr key={index}>
+        {sortedItems.map(item => (
+          <tr key={extractKey(item)}>
             {headers.map(header => (
               <Cell key={item[header.fieldName]}>
                 {item[header.fieldName] || 'unknown'}

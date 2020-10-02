@@ -1,6 +1,6 @@
 import {useWindowWidth} from '../../utils/hooks';
+import {DESKTOP_SIZE} from '../../constants';
 import React from 'react';
-import {DESKTOP} from '../../constants';
 
 export enum DeviceType {
   mobile = 'mobile',
@@ -14,7 +14,7 @@ export type HiddenProps = {
 
 const Hidden = ({on: deviceType, children}: HiddenProps) => {
   const windowWidth = useWindowWidth();
-  const isMobileSize = windowWidth <= DESKTOP;
+  const isMobileSize = windowWidth <= DESKTOP_SIZE;
 
   if (deviceType === DeviceType.mobile && isMobileSize) {
     return null;

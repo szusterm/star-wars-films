@@ -29,7 +29,7 @@ export const BoxOpeningButton = styled.button<BoxOpeningButtonProps>`
     border: 0;
   }
 
-  @media (min-width: ${DESKTOP_SIZE}) {
+  @media (min-width: ${DESKTOP_SIZE}px) {
     padding: 14px 15px;
   }
 `;
@@ -48,7 +48,7 @@ export const HiddenContainer = styled.div`
   margin-top: -8px;
   padding: ${14 + 8}px 0 14px;
 
-  @media (min-width: ${DESKTOP_SIZE}) {
+  @media (min-width: ${DESKTOP_SIZE}px) {
     padding: ${30 + 8}px 16px 30px;
   }
 `;

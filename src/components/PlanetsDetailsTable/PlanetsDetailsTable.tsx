@@ -1,8 +1,8 @@
 import SortableTable, {ColumnHeader} from '../SortableTable/SortableTable';
-import {Planet} from '../../types';
-import React from 'react';
 import MobileTable from '../MobileTable';
+import {Planet} from '../../types';
 import Hidden from '../Hidden';
+import React from 'react';
 
 type PlanetsDetailsTableProps = {
   planets: Planet[];
@@ -43,13 +43,23 @@ const PlanetsDetailsTable: React.FC<PlanetsDetailsTableProps> = ({planets}) => {
   return (
     <>
       <Hidden on="desktop">
-        <MobileTable headers={HEADERS} items={planets} />
+        <MobileTable
+          headers={HEADERS}
+          items={planets}
+          extractKey={extractPlanetKey}
+        />
       </Hidden>
       <Hidden on="mobile">
-        <SortableTable headers={HEADERS} items={planets} />
+        <SortableTable
+          headers={HEADERS}
+          items={planets}
+          extractKey={extractPlanetKey}
+        />
       </Hidden>
     </>
   );
 };
+
+const extractPlanetKey = (planet: Partial<Planet>) => planet.name || '';
 
 export default PlanetsDetailsTable;

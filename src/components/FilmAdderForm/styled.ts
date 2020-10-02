@@ -7,7 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   padding: 0 10px;
 
-  @media (min-width: ${DESKTOP_SIZE}) {
+  @media (min-width: ${DESKTOP_SIZE}px) {
     max-width: 80%;
   }
 `;
@@ -43,7 +43,7 @@ export const SubmitButton = styled.button`
     background: #74acb8;
   }
 
-  @media (min-width: ${DESKTOP_SIZE}) {
+  @media (min-width: ${DESKTOP_SIZE}px) {
     width: 160px;
   }
 `;

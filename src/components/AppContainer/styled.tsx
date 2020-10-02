@@ -6,7 +6,7 @@ export const RootContainer = styled.div`
   justify-content: center;
   padding: 48px 16px 16px;
 
-  @media (min-width: ${DESKTOP_SIZE}) {
+  @media (min-width: ${DESKTOP_SIZE}px) {
     padding: 96px;
   }
 `;
@@ -21,7 +21,7 @@ export const ContentContainer = styled.div`
   border-radius: 8px;
   padding: 35px 20px 20px;
 
-  @media (min-width: ${DESKTOP_SIZE}) {
+  @media (min-width: ${DESKTOP_SIZE}px) {
     padding: 32px;
   }
 `;
@@ -30,7 +30,7 @@ export const LogoImage = styled.img`
   height: 45px;
   margin-bottom: 16px;
 
-  @media (min-width: ${DESKTOP_SIZE}) {
+  @media (min-width: ${DESKTOP_SIZE}px) {
     height: 64px;
   }
 `;
@@ -44,7 +44,7 @@ export const CopyrightInfo = styled.footer`
   padding-bottom: 8px;
   color: #999999;
 
-  @media (min-width: ${DESKTOP_SIZE}) {
+  @media (min-width: ${DESKTOP_SIZE}px) {
     padding-top: 20px;
   }
 `;
