@@ -14,7 +14,7 @@ const AppContainer: React.FC & {Section: typeof ContentSection} = ({
   return (
     <RootContainer>
       <ContentContainer>
-        <LogoImage src={AppLogoSrc} alt="Application Logo" />
+        <LogoImage src={AppLogoSrc} alt="Frontent - Recruitment Task" />
         {children}
         <CopyrightInfo>COPYRIGHT © 2019 MIRUMEE SOFTWARE</CopyrightInfo>
       </ContentContainer>

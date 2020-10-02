@@ -1,7 +1,7 @@
 import {DESKTOP_SIZE} from '../../constants';
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.section`
   margin-bottom: 16px;
 `;
 
@@ -34,7 +34,8 @@ export const BoxOpeningButton = styled.button<BoxOpeningButtonProps>`
   }
 `;
 
-export const Title = styled.span`
+export const Title = styled.h2`
+  margin: 0;
   font-size: 1.33em;
   font-weight: 700;
   color: #00687f;

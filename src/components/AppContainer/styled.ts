@@ -11,7 +11,7 @@ export const RootContainer = styled.div`
   }
 `;
 
-export const ContentContainer = styled.div`
+export const ContentContainer = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
