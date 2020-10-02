@@ -6,6 +6,7 @@ import AppContainer from './components/AppContainer';
 import CollapsedBox from './components/CollapsedBox';
 import LoadingBox from './components/LoadingBox';
 import {GET_FILMS_LIST} from './services/api';
+import InfoBox from './components/InfoBox';
 import {useQuery} from '@apollo/client';
 import {Root} from './types';
 import React from 'react';
@@ -24,7 +25,7 @@ const App: React.FC = () => {
     <AppContainer>
       <AppContainer.Section>
         {areFilmsLoading && <LoadingBox bigger />}
-        {isLoadingError && <div>Error</div>}
+        {isLoadingError && <InfoBox>Movie loading error</InfoBox>}
 
         {films?.map(film => {
           if (!film?.title) return;

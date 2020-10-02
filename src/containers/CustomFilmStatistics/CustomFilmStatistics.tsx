@@ -16,7 +16,7 @@ const CustomFilmStatistics: React.FC<CustomFilmStatisticsProps> = ({film}) => {
 
   return (
     <CollapsedBox title={film.title}>
-      {!!planets?.length && <PlanetsDetailsTable planets={fetchedPlanets} />}
+      <PlanetsDetailsTable planets={fetchedPlanets} />
     </CollapsedBox>
   );
 };

@@ -2,6 +2,7 @@ import {GET_PLANETS_FROM_FILM, PlanetsFromFilmData} from '../../services/api';
 import PlanetsDetailsTable from '../../components/PlanetsDetailsTable';
 import CollapsedBox from '../../components/CollapsedBox';
 import LoadingBox from '../../components/LoadingBox';
+import InfoBox from '../../components/InfoBox';
 import {useLazyQuery} from '@apollo/client';
 import {Planet, Root} from '../../types';
 import React, {useMemo} from 'react';
@@ -29,7 +30,7 @@ const FilmStatistics: React.FC<FilmStatisticsProps> = ({filmId, filmTitle}) => {
     <CollapsedBox title={filmTitle} onOpen={fetchPlanets}>
       <PlanetsDetailsTable planets={fetchedPlanets} />
       {arePlanetsLoading && <LoadingBox />}
-      {(!planets || isLoadingError) && <div>Error</div>}
+      {isLoadingError && <InfoBox>Planet loading error</InfoBox>}
     </CollapsedBox>
   );
 };

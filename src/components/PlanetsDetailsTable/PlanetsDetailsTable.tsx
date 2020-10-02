@@ -1,6 +1,7 @@
 import SortableTable, {ColumnHeader} from '../SortableTable/SortableTable';
 import MobileTable from '../MobileTable';
 import {Planet} from '../../types';
+import InfoBox from '../InfoBox';
 import Hidden from '../Hidden';
 import React from 'react';
 
@@ -56,6 +57,7 @@ const PlanetsDetailsTable: React.FC<PlanetsDetailsTableProps> = ({planets}) => {
           extractKey={extractPlanetKey}
         />
       </Hidden>
+      {!planets.length && <InfoBox>This movie has no planets</InfoBox>}
     </>
   );
 };
