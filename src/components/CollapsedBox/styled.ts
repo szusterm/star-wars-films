@@ -35,7 +35,7 @@ export const BoxOpeningButton = styled.button<BoxOpeningButtonProps>`
 `;
 
 export const Title = styled.span`
-  font-size: 16px;
+  font-size: 1.33em;
   font-weight: 700;
   color: #00687f;
 `;

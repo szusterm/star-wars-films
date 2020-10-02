@@ -15,7 +15,7 @@ export const ContainerButton = styled.button`
 
 export const Title = styled.span`
   color: #474747;
-  font-size: 16px;
+  font-size: 1.33em;
   line-height: 19px;
 `;
 

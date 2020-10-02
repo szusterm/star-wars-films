@@ -11,7 +11,6 @@ type LabelProps = {
   isError?: boolean;
 };
 export const Label = styled.label<LabelProps>`
-  font-size: 12px;
   font-weight: 400;
   line-height: 14px;
   margin-bottom: 5px;
@@ -24,7 +23,7 @@ export const StyledInput = styled.input`
   border: 0;
   border-bottom: 1px solid #999999;
   background: transparent;
-  font-size: 16px;
+  font-size: 1.33em;
   color: #474747;
 
   &::placeholder {

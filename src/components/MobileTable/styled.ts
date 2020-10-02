@@ -8,7 +8,7 @@ export const Table = styled.table`
   width: 100%;
   padding: 20px 10px 25px;
 
-  font-size: 14px;
+  font-size: 1.17em;
   font-weight: 400;
   line-height: 17px;
   text-align: left;

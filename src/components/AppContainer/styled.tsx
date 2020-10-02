@@ -50,7 +50,6 @@ export const LogoImage = styled.img`
 `;
 
 export const CopyrightInfo = styled.footer`
-  font-size: 12px;
   font-weight: 300;
   line-height: 14px;
   text-align: center;

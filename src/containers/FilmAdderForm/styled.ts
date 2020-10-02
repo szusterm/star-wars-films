@@ -29,7 +29,6 @@ export const SubmitButton = styled.button`
   width: 100%;
   height: 34px;
   border: 0;
-  font-size: 12px;
   font-weight: 700;
   line-height: 16px;
   text-align: center;
