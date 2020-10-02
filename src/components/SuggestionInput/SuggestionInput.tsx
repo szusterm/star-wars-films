@@ -6,7 +6,7 @@ import React, {useState} from 'react';
 import './autosuggest-override.css';
 import Input from '../Input';
 
-type SuggestionInput<T> = {
+export type SuggestionInput<T> = {
   value?: string;
   suggestions: T[];
   onValueChange?: (newValue: string) => void;

@@ -1,12 +1,12 @@
 import {GET_PLANETS_FROM_FILM, PlanetsFromFilmData} from '../../services/api';
 import PlanetsDetailsTable from '../../components/PlanetsDetailsTable';
-import LoadingBox from '../../components/LoadingBox/LoadingBox';
-import {useLazyQuery} from '@apollo/client';
 import CollapsedBox from '../../components/CollapsedBox';
+import LoadingBox from '../../components/LoadingBox';
+import {useLazyQuery} from '@apollo/client';
 import {Planet, Root} from '../../types';
 import React, {useMemo} from 'react';
 
-type FilmStatisticsProps = {
+export type FilmStatisticsProps = {
   filmId: string;
   filmTitle: string;
 };

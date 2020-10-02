@@ -2,7 +2,7 @@ import {ContainerButton, RemoveImg, Title} from './styled';
 import CloseSrc from '../../assets/close.svg';
 import React from 'react';
 
-type SelectedItemProps = {
+export type SelectedItemProps = {
   children?: string | null;
   onRemoveRequest?: () => void;
 };

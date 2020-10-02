@@ -9,7 +9,7 @@ import {
   Title
 } from './styled';
 
-type CollapsedBoxProps = {
+export type CollapsedBoxProps = {
   title?: string | null;
   onOpen?: () => void;
 };

@@ -5,7 +5,7 @@ export const Container = styled.div`
   margin-bottom: 16px;
 `;
 
-type BoxOpeningButtonProps = {
+export type BoxOpeningButtonProps = {
   isOpened?: boolean;
 };
 const SHADOW_WITH_CLOSED = '0 2px 1px rgba(196, 196, 196, 0.2)';

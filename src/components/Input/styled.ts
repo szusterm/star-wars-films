@@ -7,7 +7,7 @@ export const Container = styled.div`
   position: relative;
 `;
 
-type LabelProps = {
+export type LabelProps = {
   isError?: boolean;
 };
 export const Label = styled.label<LabelProps>`

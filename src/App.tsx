@@ -1,12 +1,12 @@
 import CustomFilmStatistics from './containers/CustomFilmStatistics';
-import LoadingBox from './components/LoadingBox/LoadingBox';
 import FilmStatistics from './containers/FilmStatistics';
 import FilmAdderForm from './containers/FilmAdderForm';
+import {useCustomFilms} from './services/customFilms';
 import AppContainer from './components/AppContainer';
 import CollapsedBox from './components/CollapsedBox';
-import {useCustomFilms} from './services/customFilms';
-import {useQuery} from '@apollo/client';
+import LoadingBox from './components/LoadingBox';
 import {GET_FILMS_LIST} from './services/api';
+import {useQuery} from '@apollo/client';
 import {Root} from './types';
 import React from 'react';
 

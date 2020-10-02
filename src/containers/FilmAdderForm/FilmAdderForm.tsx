@@ -1,14 +1,14 @@
 import {SubmitContainer, SubmitButton, Container} from './styled';
 import {isFirstLetterUpperCase} from '../../utils/string';
-import {MIN_FILM_TITLE_LENGTH} from '../../constants';
 import {addCustomFilm} from '../../services/customFilms';
+import {MIN_FILM_TITLE_LENGTH} from '../../constants';
 import {useDebouncedState} from '../../utils/hooks';
+import {GET_PLANETS_LIST} from '../../services/api';
 import PlanetsSelector from './PlanetsSelector';
 import React, {useState, useMemo} from 'react';
-import {GET_PLANETS_LIST} from '../../services/api';
+import Input from '../../components/Input';
 import {Planet, Root} from '../../types';
 import {useQuery} from '@apollo/client';
-import Input from '../../components/Input';
 
 const FIRST_LETTER_UPPER_CASE_MSG =
   'Movie title name must start with a capital letter';
