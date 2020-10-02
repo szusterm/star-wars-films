@@ -16,7 +16,7 @@ export const ContentContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  max-width: 790px;
+  max-width: 860px;
   background: #e0e6ee;
   border-radius: 8px;
   padding: 35px 20px 20px;
