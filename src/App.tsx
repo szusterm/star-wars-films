@@ -1,4 +1,5 @@
 import CustomFilmStatistics from './components/CustomFilmStatistics';
+import LoadingBox from './components/LoadingBox/LoadingBox';
 import FilmStatistics from './components/FilmStatistics';
 import DashedDivider from './components/DashedDivider';
 import FilmAdderForm from './components/FilmAdderForm';
@@ -20,26 +21,26 @@ const App: React.FC = () => {
 
   const customFilms = useCustomFilms();
 
-  const renderedFilms = films?.map(film => {
-    if (!film?.title) return;
-
-    return (
-      <FilmStatistics key={film.id} filmId={film.id} filmTitle={film.title} />
-    );
-  });
-
-  const renderedContent = [
-    areFilmsLoading && <div>Loading</div>,
-    (!films || isLoadingError) && <div>Error</div>,
-    renderedFilms
-  ].find(Boolean);
-
   return (
     <AppContainer>
-      {renderedContent}
+      {areFilmsLoading && <LoadingBox bigger />}
+      {isLoadingError && <div>Error</div>}
+
+      {films?.map(film => {
+        if (!film?.title) return;
+
+        return (
+          <FilmStatistics
+            key={film.id}
+            filmId={film.id}
+            filmTitle={film.title}
+          />
+        );
+      })}
       {customFilms.map(film => (
         <CustomFilmStatistics key={film.id} film={film} />
       ))}
+
       <DashedDivider />
       <CollapsedBox title="Add movie">
         <FilmAdderForm />

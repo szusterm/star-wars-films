@@ -42,7 +42,8 @@ export const Title = styled.span`
 
 export const HiddenContainer = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background: white;
   box-shadow: 0 2px 1px rgba(196, 196, 196, 0.2);
   margin-top: -8px;
