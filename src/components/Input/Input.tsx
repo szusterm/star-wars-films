@@ -1,5 +1,5 @@
 import {Container, ErrorInfoBox, Label, StyledInput} from './styled';
-import React from 'react';
+import React, {forwardRef} from 'react';
 
 export type InputProps = {
   id?: string;
@@ -11,16 +11,18 @@ export type InputProps = {
   errorText?: string | false;
 };
 
-const Input: React.FC<InputProps> = ({
-  id,
-  label,
-  placeholder,
-  value,
-  onChangeValue,
-  isError,
-  errorText,
-  ...restInputProps
-}) => {
+const Input = forwardRef((props: InputProps, ref) => {
+  const {
+    id,
+    label,
+    placeholder,
+    value,
+    onChangeValue,
+    isError,
+    errorText,
+    ...restInputProps
+  } = props;
+
   return (
     <Container>
       {label && (
@@ -29,6 +31,7 @@ const Input: React.FC<InputProps> = ({
         </Label>
       )}
       <StyledInput
+        ref={ref as any}
         id={id}
         value={value}
         placeholder={placeholder}
@@ -38,6 +41,8 @@ const Input: React.FC<InputProps> = ({
       {isError && errorText && <ErrorInfoBox>{errorText}</ErrorInfoBox>}
     </Container>
   );
-};
+});
+
+Input.displayName = 'Input';
 
 export default Input;
