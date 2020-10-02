@@ -36,7 +36,7 @@ export const TableRow = styled.tr`
   align-items: center;
   height: 50px;
 
-  &:first-child ${ValueCell.selector} {
+  &:first-child td {
     color: #00687f;
   }
 `;
