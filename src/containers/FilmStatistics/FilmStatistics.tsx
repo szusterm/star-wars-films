@@ -1,8 +1,8 @@
 import {GET_PLANETS_FROM_FILM, PlanetsFromFilmData} from '../../api';
-import PlanetsDetailsTable from '../PlanetsDetailsTable';
-import LoadingBox from '../LoadingBox/LoadingBox';
+import PlanetsDetailsTable from '../../components/PlanetsDetailsTable';
+import LoadingBox from '../../components/LoadingBox/LoadingBox';
 import {useLazyQuery} from '@apollo/client';
-import CollapsedBox from '../CollapsedBox';
+import CollapsedBox from '../../components/CollapsedBox';
 import {Planet, Root} from '../../types';
 import React, {useMemo} from 'react';
 

@@ -1,6 +1,6 @@
 import {SelectedPlanetsContainer} from './styled';
-import SuggestionInput from '../SuggestionInput';
-import SelectedItem from '../SelectedItem';
+import SuggestionInput from '../../components/SuggestionInput';
+import SelectedItem from '../../components/SelectedItem';
 import {Planet} from '../../types';
 import React from 'react';
 

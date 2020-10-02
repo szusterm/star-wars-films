@@ -8,7 +8,7 @@ import React, {useState, useMemo} from 'react';
 import {GET_PLANETS_LIST} from '../../api';
 import {Planet, Root} from '../../types';
 import {useQuery} from '@apollo/client';
-import Input from '../Input';
+import Input from '../../components/Input';
 
 const FIRST_LETTER_UPPER_CASE_MSG =
   'Movie title name must start with a capital letter';

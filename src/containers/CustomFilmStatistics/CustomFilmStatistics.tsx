@@ -1,5 +1,5 @@
-import PlanetsDetailsTable from '../PlanetsDetailsTable';
-import CollapsedBox from '../CollapsedBox';
+import PlanetsDetailsTable from '../../components/PlanetsDetailsTable';
+import CollapsedBox from '../../components/CollapsedBox';
 import {Film, Planet} from '../../types';
 import React, {useMemo} from 'react';
 
