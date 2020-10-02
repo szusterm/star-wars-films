@@ -15,6 +15,7 @@ export const ContainerButton = styled.button<ContainerButtonProps>`
   background: transparent;
   cursor: pointer;
   align-self: flex-end;
+  color: #474747;
 
   &:hover {
     color: #00687f;

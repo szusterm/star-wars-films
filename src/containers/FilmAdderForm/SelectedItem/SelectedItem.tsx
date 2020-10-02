@@ -1,5 +1,5 @@
 import {ContainerButton, RemoveImg, Title} from './styled';
-import CloseSrc from '../../assets/close.svg';
+import CloseSrc from '../../../assets/close.svg';
 import React from 'react';
 
 export type SelectedItemProps = {

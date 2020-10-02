@@ -25,8 +25,8 @@ export const BoxOpeningButton = styled.button<BoxOpeningButtonProps>`
   box-shadow: ${({isOpened}) =>
     isOpened ? SHADOW_WITH_OPENED : SHADOW_WITH_CLOSED};
 
-  &:active {
-    border: 0;
+  &:hover {
+    filter: brightness(96%);
   }
 
   @media (min-width: ${DESKTOP_SIZE}px) {

@@ -11,6 +11,11 @@ export const ContainerButton = styled.button`
   border: 1px solid #999999;
   background-color: white;
   cursor: pointer;
+  color: #474747;
+
+  &:hover {
+    filter: brightness(95%);
+  }
 `;
 
 export const Title = styled.span`
