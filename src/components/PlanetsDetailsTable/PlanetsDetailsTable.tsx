@@ -1,6 +1,7 @@
 import SortableTable, {ColumnHeader} from '../SortableTable/SortableTable';
 import {Planet} from '../../types';
 import React from 'react';
+import MobileTable from '../MobileTable';
 
 type PlanetsDetailsTableProps = {
   planets: Planet[];
@@ -38,7 +39,7 @@ const HEADERS: ColumnHeader[] = [
 ];
 
 const PlanetsDetailsTable: React.FC<PlanetsDetailsTableProps> = ({planets}) => {
-  return <SortableTable headers={HEADERS} items={planets} />;
+  return <MobileTable headers={HEADERS} items={planets} />;
 };
 
 export default PlanetsDetailsTable;

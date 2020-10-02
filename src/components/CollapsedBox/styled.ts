@@ -46,7 +46,7 @@ export const HiddenContainer = styled.div`
   background: white;
   box-shadow: 0 2px 1px rgba(196, 196, 196, 0.2);
   margin-top: -8px;
-  padding: ${14 + 8}px 10px 14px;
+  padding: ${14 + 8}px 0 14px;
 
   @media (min-width: ${DESKTOP_SIZE}) {
     padding: ${30 + 8}px 16px 30px;

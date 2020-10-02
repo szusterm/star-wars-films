@@ -50,17 +50,15 @@ const SortableTable: React.FC<SuperTableProps> = ({headers, items}) => {
         </HeadRow>
       </thead>
       <tbody>
-        {sortedItems.map((item, index) => {
-          return (
-            <tr key={index}>
-              {headers.map(header => (
-                <Cell key={item[header.fieldName]}>
-                  {item[header.fieldName]}
-                </Cell>
-              ))}
-            </tr>
-          );
-        })}
+        {sortedItems.map((item, index) => (
+          <tr key={index}>
+            {headers.map(header => (
+              <Cell key={item[header.fieldName]}>
+                {item[header.fieldName] || 'unknown'}
+              </Cell>
+            ))}
+          </tr>
+        ))}
       </tbody>
     </Table>
   );
