@@ -4,9 +4,9 @@ import FilmStatistics from './containers/FilmStatistics';
 import FilmAdderForm from './containers/FilmAdderForm';
 import AppContainer from './components/AppContainer';
 import CollapsedBox from './components/CollapsedBox';
-import {useCustomFilms} from './utils/customFilms';
+import {useCustomFilms} from './services/customFilms';
 import {useQuery} from '@apollo/client';
-import {GET_FILMS_LIST} from './api';
+import {GET_FILMS_LIST} from './services/api';
 import {Root} from './types';
 import React from 'react';
 

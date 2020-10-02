@@ -1,5 +1,5 @@
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
-import {loadCustomFilms} from './utils/customFilms';
+import {loadCustomFilms} from './services/customFilms';
 import 'semantic-ui-css/semantic.min.css';
 import {SWAPI_URL} from './constants';
 import ReactDOM from 'react-dom';

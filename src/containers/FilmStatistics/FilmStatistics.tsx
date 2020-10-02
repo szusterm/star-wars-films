@@ -1,4 +1,4 @@
-import {GET_PLANETS_FROM_FILM, PlanetsFromFilmData} from '../../api';
+import {GET_PLANETS_FROM_FILM, PlanetsFromFilmData} from '../../services/api';
 import PlanetsDetailsTable from '../../components/PlanetsDetailsTable';
 import LoadingBox from '../../components/LoadingBox/LoadingBox';
 import {useLazyQuery} from '@apollo/client';

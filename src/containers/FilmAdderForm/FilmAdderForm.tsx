@@ -1,11 +1,11 @@
 import {SubmitContainer, SubmitButton, Container} from './styled';
 import {isFirstLetterUpperCase} from '../../utils/string';
 import {MIN_FILM_TITLE_LENGTH} from '../../constants';
-import {addCustomFilm} from '../../utils/customFilms';
+import {addCustomFilm} from '../../services/customFilms';
 import {useDebouncedState} from '../../utils/hooks';
 import PlanetsSelector from './PlanetsSelector';
 import React, {useState, useMemo} from 'react';
-import {GET_PLANETS_LIST} from '../../api';
+import {GET_PLANETS_LIST} from '../../services/api';
 import {Planet, Root} from '../../types';
 import {useQuery} from '@apollo/client';
 import Input from '../../components/Input';
