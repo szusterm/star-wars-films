@@ -19,10 +19,24 @@ export const ContentContainer = styled.div`
   max-width: 860px;
   background: #e0e6ee;
   border-radius: 8px;
-  padding: 35px 20px 20px;
+  padding: 35px 0 20px;
 
   @media (min-width: ${DESKTOP_SIZE}px) {
-    padding: 32px;
+    padding: 32px 0;
+  }
+`;
+
+export const ContentSection = styled.div`
+  padding: 0 20px;
+
+  @media (min-width: ${DESKTOP_SIZE}px) {
+    padding: 0 32px;
+  }
+
+  &:not(:last-of-type) {
+    padding-bottom: 16px;
+    margin-bottom: 32px;
+    border-bottom: 2px dashed #ffffff;
   }
 `;
 

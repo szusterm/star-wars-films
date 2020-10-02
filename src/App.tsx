@@ -1,7 +1,6 @@
 import CustomFilmStatistics from './components/CustomFilmStatistics';
 import LoadingBox from './components/LoadingBox/LoadingBox';
 import FilmStatistics from './components/FilmStatistics';
-import DashedDivider from './components/DashedDivider';
 import FilmAdderForm from './components/FilmAdderForm';
 import AppContainer from './components/AppContainer';
 import CollapsedBox from './components/CollapsedBox';
@@ -23,28 +22,31 @@ const App: React.FC = () => {
 
   return (
     <AppContainer>
-      {areFilmsLoading && <LoadingBox bigger />}
-      {isLoadingError && <div>Error</div>}
+      <AppContainer.Section>
+        {areFilmsLoading && <LoadingBox bigger />}
+        {isLoadingError && <div>Error</div>}
 
-      {films?.map(film => {
-        if (!film?.title) return;
+        {films?.map(film => {
+          if (!film?.title) return;
 
-        return (
-          <FilmStatistics
-            key={film.id}
-            filmId={film.id}
-            filmTitle={film.title}
-          />
-        );
-      })}
-      {customFilms.map(film => (
-        <CustomFilmStatistics key={film.id} film={film} />
-      ))}
+          return (
+            <FilmStatistics
+              key={film.id}
+              filmId={film.id}
+              filmTitle={film.title}
+            />
+          );
+        })}
+        {customFilms.map(film => (
+          <CustomFilmStatistics key={film.id} film={film} />
+        ))}
+      </AppContainer.Section>
 
-      <DashedDivider />
-      <CollapsedBox title="Add movie">
-        <FilmAdderForm />
-      </CollapsedBox>
+      <AppContainer.Section>
+        <CollapsedBox title="Add movie">
+          <FilmAdderForm />
+        </CollapsedBox>
+      </AppContainer.Section>
     </AppContainer>
   );
 };

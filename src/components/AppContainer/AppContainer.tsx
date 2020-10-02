@@ -1,13 +1,16 @@
-import {
-  ContentContainer,
-  CopyrightInfo,
-  LogoImage,
-  RootContainer
-} from './styled';
 import AppLogoSrc from '../../assets/logo.svg';
 import React from 'react';
+import {
+  ContentContainer,
+  ContentSection,
+  CopyrightInfo,
+  RootContainer,
+  LogoImage
+} from './styled';
 
-const AppContainer: React.FC = ({children}) => {
+const AppContainer: React.FC & {Section: typeof ContentSection} = ({
+  children
+}) => {
   return (
     <RootContainer>
       <ContentContainer>
@@ -18,5 +21,7 @@ const AppContainer: React.FC = ({children}) => {
     </RootContainer>
   );
 };
+
+AppContainer.Section = ContentSection;
 
 export default AppContainer;
