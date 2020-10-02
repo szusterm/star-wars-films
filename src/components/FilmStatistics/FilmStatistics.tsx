@@ -2,8 +2,8 @@ import {GET_PLANETS_FROM_FILM, PlanetsFromFilmData} from '../../api';
 import PlanetsDetailsTable from '../PlanetsDetailsTable';
 import {useLazyQuery} from '@apollo/client';
 import CollapsedBox from '../CollapsedBox';
-import {Root} from '../../types';
-import React from 'react';
+import {Planet, Root} from '../../types';
+import React, {useMemo} from 'react';
 
 type FilmStatisticsProps = {
   filmId: string;
@@ -19,11 +19,15 @@ const FilmStatistics: React.FC<FilmStatisticsProps> = ({filmId, filmTitle}) => {
   });
 
   const {planets} = responseData?.film?.planetConnection || {};
+  const fetchedPlanets: Planet[] = useMemo(() => {
+    if (!planets) return [];
+    return planets.filter(Boolean) as Planet[];
+  }, [planets]);
 
   const renderedContent = [
     arePlanetsLoading && <div>Loading</div>,
     (!planets || isLoadingError) && <div>Error</div>,
-    planets && <PlanetsDetailsTable planets={planets} />
+    planets && <PlanetsDetailsTable planets={fetchedPlanets} />
   ].find(Boolean);
 
   return (

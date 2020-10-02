@@ -1,44 +1,44 @@
-import {Cell, HeadRow, Table} from './styled';
-import {Maybe, Planet} from '../../types';
+import SortableTable, {ColumnHeader} from '../SortableTable/SortableTable';
+import {Planet} from '../../types';
 import React from 'react';
 
 type PlanetsDetailsTableProps = {
-  planets: Maybe<Planet>[];
+  planets: Planet[];
 };
 
-const PlanetsDetailsTable: React.FC<PlanetsDetailsTableProps> = ({planets}) => {
-  return (
-    <Table>
-      <thead>
-        <HeadRow>
-          <Cell marked>Name</Cell>
-          <Cell>Rotation period</Cell>
-          <Cell>Orbital period</Cell>
-          <Cell>Diameter</Cell>
-          <Cell>Climate</Cell>
-          <Cell>Surface water</Cell>
-          <Cell>Population</Cell>
-        </HeadRow>
-      </thead>
-      <tbody>
-        {planets.map(planet => {
-          if (!planet) return;
+const HEADERS: ColumnHeader[] = [
+  {
+    label: 'Name',
+    fieldName: 'name'
+  },
+  {
+    label: 'Rotation period',
+    fieldName: 'rotationPeriod'
+  },
+  {
+    label: 'Orbital period',
+    fieldName: 'orbitalPeriod'
+  },
+  {
+    label: 'Diameter',
+    fieldName: 'diameter'
+  },
+  {
+    label: 'Climate',
+    fieldName: 'climates'
+  },
+  {
+    label: 'Surface water',
+    fieldName: 'surfaceWater'
+  },
+  {
+    label: 'Population',
+    fieldName: 'population'
+  }
+];
 
-          return (
-            <tr key={planet.id}>
-              <Cell marked>{planet.name}</Cell>
-              <Cell>{planet.rotationPeriod}</Cell>
-              <Cell>{planet.orbitalPeriod}</Cell>
-              <Cell>{planet.diameter}</Cell>
-              <Cell>{planet.climates}</Cell>
-              <Cell>{planet.surfaceWater}</Cell>
-              <Cell>{planet.population}</Cell>
-            </tr>
-          );
-        })}
-      </tbody>
-    </Table>
-  );
+const PlanetsDetailsTable: React.FC<PlanetsDetailsTableProps> = ({planets}) => {
+  return <SortableTable headers={HEADERS} items={planets} />;
 };
 
 export default PlanetsDetailsTable;
